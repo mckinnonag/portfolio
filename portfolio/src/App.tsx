@@ -4,6 +4,7 @@ import BottomNav from './components/Nav/BottomNav';
 import Contact from './components/Contact/Contact';
 import logo from './logo.svg';
 import './App.css';
+import Projects from './components/Cards/Projects';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
                   </p>
                 </>
                 } />
-              <Route path="/projects" element={<h1>Placeholder projects</h1>} />
+              <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<h1>Page not found</h1>} />
             </Routes>
