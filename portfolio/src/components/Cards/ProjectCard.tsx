@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+// Inserts a bullet
 const bull = (
   <Box
     component="span"
@@ -15,23 +16,31 @@ const bull = (
   </Box>
 );
 
-const ProjectCard =() => {
+
+
+export interface Props {
+    title: string;
+    description: string;
+    languages: string[];
+    linkURL: string;
+}
+
+const ProjectCard = (props: Props) => {
+  const technologies = props.languages.map((language) => 
+    <div>{language} </div>       
+  );
+
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Project Title
-        </Typography>
         <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+          {props.title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
+          {technologies}
         </Typography>
         <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {props.description}
         </Typography>
       </CardContent>
       <CardActions>

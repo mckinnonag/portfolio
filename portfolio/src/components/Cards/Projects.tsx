@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard';
 const Projects = () => {
     return (
         <>
-            <ProjectCard /> <ProjectCard /> <ProjectCard />
+            <ProjectCard title="Project Title" description="description" languages={['Python', 'TypeScript']} linkURL='google.com' />
         </>
        
     )
