@@ -1,47 +1,95 @@
 import * as React from 'react';
 import Project from './Interfaces';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
+import Grid from '@mui/material/Grid';
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
 import Stack from '@mui/material/Stack';
+import Code from '@mui/icons-material/Code';
+import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 
-// Inserts a chip to render languages and technologies in the card
-const chip = (
-    <Stack direction="row" spacing={1}>
-        <Chip label="Chip Outlined" variant="outlined" />
-    </Stack>
-);
+const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
 
 const ProjectCard = (props: Project) => {
+  // Iterates through the array of tech/languages and renders each as an icon
   const technologies = props.languages.map((language) => 
-    <>
+    <Grid item>
         <Chip label={language} variant="outlined" />
-    </>  
+    </Grid> 
   );
 
+  // State for the modal
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <Card sx={{ minWidth: 275, margin: '10px', maxWidth: '5%' }}>
-      <CardContent>
-        <Typography variant="h5" component="div">
-          {props.title}
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        <Stack direction="row" spacing={1}>
-            {technologies}
-        </Stack> 
-        </Typography>
-        <Typography variant="body2">
-          {props.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <div>
+        <Card sx={{ margin: '10px' }}>
+        <CardContent>
+            <Typography variant="h5" component="div">
+            {props.title}
+            </Typography>
+            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Grid container spacing={1} justifyContent="center">
+                    {technologies}
+                </Grid> 
+            </Typography>
+            <Typography variant="body2">
+            {props.description}
+            </Typography>
+        </CardContent>
+        <CardActions>
+            <Button size="small" 
+                    onClick={handleOpen}
+                    >Learn More</Button>
+        </CardActions>
+        </Card>
+
+        <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+            timeout: 500,
+            }}
+            >
+            <Fade in={open}>
+                <Box sx={style}>
+                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                        {props.title}
+                    </Typography>
+                    <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                        {props.description}
+                    </Typography>
+                    <Stack spacing={2} direction="row" justifyContent="right" mt="10px">
+                        <Button variant="outlined">{<OpenInBrowserIcon />}</Button>
+                        <Button variant="outlined">{<Code />}</Button>
+                    </Stack>
+                </Box>
+            </Fade>
+        </Modal>
+    </div>
   );
 }
 

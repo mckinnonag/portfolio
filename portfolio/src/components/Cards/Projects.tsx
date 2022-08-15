@@ -1,10 +1,12 @@
 import * as React from 'react';
 import ProjectCard from './ProjectCard';
 import Project from './Interfaces';
-import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 
 const langsPortfolio: string[] = ['React', 'TypeScript'];
 const langsMoneyApp: string[] = ['React', 'TypeScript', 'Go', 'Postgres SQL'];
+const langsAnother: string[] = ['Python'];
 const projects: Project[] = [
     {
         title: 'This Website',
@@ -18,21 +20,34 @@ const projects: Project[] = [
         languages: langsMoneyApp,
         linkURL: 'google.com',
     },
+    {
+        title: 'Another Project',
+        description: 'TBD',
+        languages: langsAnother,
+        linkURL: 'google.com',
+    },
 ];
 
 const cards = projects.map((project) =>
-    <ProjectCard title={project.title} 
-                 description={project.description} 
-                 languages={project.languages} 
-                 linkURL={project.linkURL} 
-    />
+    <Grid item xs>
+        <ProjectCard 
+            title={project.title} 
+            description={project.description} 
+            languages={project.languages} 
+            linkURL={project.linkURL} 
+        />
+    </Grid>
 );
 
 const Projects = () => {
     return (
-        <>
-            {cards}
-        </>
+        <Box sx={{
+            display: 'flex',
+        }}>
+            <Grid container spacing={1} lg={8} mx='auto'>
+                {cards}
+            </Grid>
+        </Box>
     )
 }
 

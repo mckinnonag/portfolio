@@ -12,8 +12,13 @@ const BottomNav = () => {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 500 }}>
+    <Box>
         <BottomNavigation
+          sx={{ 
+            margin: 'auto',
+            width: '35%',
+            display: 'flex',
+          }}
           showLabels
           value={value}
           onChange={(event, newValue) => {
