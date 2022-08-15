@@ -13,18 +13,24 @@ const projects: Project[] = [
         description: 'A simple portfolio page built in TypeScript React.',
         languages: langsPortfolio,
         linkURL: 'google.com',
+        linkDisabled: true,
+        sourceDisabled: false,
     },
     {
         title: 'MoneyApp',
         description: 'A expense-sharing application built with a TypeScript React frontend, a Go backend using Gin, Postgres SQL, and utilizing the Plaid API.',
         languages: langsMoneyApp,
         linkURL: 'google.com',
+        linkDisabled: false,
+        sourceDisabled: false,
     },
     {
-        title: 'Another Project',
+        title: 'Raft',
         description: 'TBD',
         languages: langsAnother,
         linkURL: 'google.com',
+        linkDisabled: false,
+        sourceDisabled: true,
     },
 ];
 
@@ -34,7 +40,9 @@ const cards = projects.map((project) =>
             title={project.title} 
             description={project.description} 
             languages={project.languages} 
-            linkURL={project.linkURL} 
+            linkURL={project.linkURL}
+            linkDisabled={project.linkDisabled}
+            sourceDisabled={project.sourceDisabled}
         />
     </Grid>
 );

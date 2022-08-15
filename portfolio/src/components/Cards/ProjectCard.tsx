@@ -83,8 +83,9 @@ const ProjectCard = (props: Project) => {
                         {props.description}
                     </Typography>
                     <Stack spacing={2} direction="row" justifyContent="right" mt="10px">
-                        <Button variant="outlined">{<OpenInBrowserIcon />}</Button>
-                        <Button variant="outlined">{<Code />}</Button>
+                        <Button disabled={props.linkDisabled}       variant="outlined">{<OpenInBrowserIcon />}</Button>
+                        <Button disabled={props.sourceDisabled}
+                        variant="outlined">{<Code />}</Button>
                     </Stack>
                 </Box>
             </Fade>

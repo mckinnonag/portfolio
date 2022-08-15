@@ -3,6 +3,8 @@ interface Project {
     description: string;
     languages: string[];
     linkURL: string;
+    linkDisabled: boolean;
+    sourceDisabled: boolean;
 }
 
 export default Project;
