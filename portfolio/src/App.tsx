@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, useLocation, Navigate } from 'react-router-dom';
-import BottomNav from './components/Nav/BottomNav';
+import DocIframe from './components/Document/Document';
 import Contact from './components/Contact/Contact';
 import logo from './logo.svg';
 import './App.css';
@@ -29,8 +29,9 @@ function App() {
                     <img src={logo} className="App-logo" alt="logo" />
                   </>
                   } />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path='/projects' element={<Projects />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/resume' element={<DocIframe />} />
                 <Route path="*" element={<h1>Page not found</h1>} />
               </Routes>
             </Box>
