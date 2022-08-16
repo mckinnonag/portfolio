@@ -10,6 +10,9 @@ import Projects from './components/Cards/Projects';
 import Navbar from './components/Nav/Navbar';
 import Box from '@mui/material/Box';
 
+// Appended to the beginning of links to make react-router work properly when deployed
+const project: string = 'portfolio'
+
 const gitTarget: TargetProps = {
   target: 'https://www.github.com/mckinnonag',
 }
@@ -35,13 +38,13 @@ function App() {
                 alignContent: 'center',
             }}>
               <Routes>
-                <Route path="/" element={
+                <Route path={ `/${project}/` } element={
                   <>
                     <img src={logo} className="App-logo" alt="logo" />
                   </>
                   } />
-                <Route path='/projects' element={<Projects />} />
-                <Route path='/contact' element={<Contact />} />
+                <Route path={ `/${project}/projects` } element={<Projects />} />
+                <Route path={ `/${project}/contact` } element={<Contact />} />
                 <Route path='/resume' element={<DocIframe />} />
                 <Route path='/github' element={<Redirect target={gitTarget.target} />} />
                 <Route path='/linkedin' element={<Redirect target={linkedInTarget.target} />} />
