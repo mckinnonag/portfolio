@@ -11,7 +11,10 @@ const Contact = () => {
     const navigate = useNavigate();
 
     return (
-        <Box sx={{ '& > :not(style)': { m: 1 }, padding: '50px'}}>
+        <Box sx={{ 
+            '& > :not(style)': { m: 1 }, 
+            justifyContent: 'center',
+        }}>
             <Fab variant="extended" 
                  aria-label="linkedin"
                  onClick={() => {

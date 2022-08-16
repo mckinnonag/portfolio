@@ -35,7 +35,7 @@ const projects: Project[] = [
 ];
 
 const cards = projects.map((project) =>
-    <Grid item xs>
+    <Grid item xs={12} sm={6}>
         <ProjectCard 
             title={project.title} 
             description={project.description} 
@@ -52,7 +52,9 @@ const Projects = () => {
         <Box sx={{
             display: 'flex',
         }}>
-            <Grid container spacing={1} lg={8} mx='auto'>
+            <Grid container spacing={1} 
+                  justifyContent="center"
+                  >
                 {cards}
             </Grid>
         </Box>

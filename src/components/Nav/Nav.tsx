@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Projects', 'Resume', 'Contact'];
+const pages = ['About', 'Projects', 'Contact'];
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
