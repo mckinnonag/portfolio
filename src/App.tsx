@@ -21,26 +21,24 @@ const mailTarget: TargetProps = {
 
 function App() {
   return (
-    <div className="App">
-        <BrowserRouter>
-          <Layout>
-              <Routes>
-                <Route path="/portfolio" element={
-                  <>
-                    <img src={logo} className="App-logo" alt="logo" />
-                  </>
-                  } />
-                <Route path='/projects' element={<Projects />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/resume' element={<DocIframe />} />
-                <Route path='/github' element={<Redirect target={gitTarget.target} />} />
-                <Route path='/linkedin' element={<Redirect target={linkedInTarget.target} />} />
-                <Route path='/mail' element={<Redirect target={mailTarget.target} />} />
-                <Route path="*" element={<h1>Page not found</h1>} />
-              </Routes>
-          </Layout>
-        </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Layout>
+          <Routes>
+            <Route path="/portfolio" element={
+              <>
+                <img src={logo} className="App-logo" alt="logo" />
+              </>
+              } />
+            <Route path='/projects' element={<Projects />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/resume' element={<DocIframe />} />
+            <Route path='/github' element={<Redirect target={gitTarget.target} />} />
+            <Route path='/linkedin' element={<Redirect target={linkedInTarget.target} />} />
+            <Route path='/mail' element={<Redirect target={mailTarget.target} />} />
+            <Route path="*" element={<h1>Page not found</h1>} />
+          </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
