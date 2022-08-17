@@ -15,19 +15,8 @@ import Backdrop from '@mui/material/Backdrop';
 import Code from '@mui/icons-material/Code';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import Project from '../Cards/Interfaces';
+import ProjectCard from '../ProjectCard/ProjectCard';
 
-// Modal style
-const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
 
 // Static content to serve projects
 const langsPortfolio: string[] = ['React', 'TypeScript'];
@@ -63,6 +52,18 @@ const projects: Project[] = [
         sourceDisabled: true,
     },
 ]
+
+const cards = ((project: Project) =>
+    <ProjectCard
+        id={project.id}
+        title={project.title} 
+        description={project.description} 
+        languages={project.languages} 
+        linkURL={project.linkURL}
+        linkDisabled={project.linkDisabled}
+        sourceDisabled={project.sourceDisabled}
+    />
+);
 
 export default function Projects() {
     // State for the modal
@@ -101,57 +102,7 @@ export default function Projects() {
                 <Grid container spacing={4}>
                     {projects.map((project) => (
                         <Grid item key={project.id} xs={12} sm={6} md={4}>
-                            <Card
-                            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                            >
-                            <CardMedia
-                                component="img"
-                                image="https://source.unsplash.com/random"
-                                alt="random"
-                            />
-                            <CardContent sx={{ flexGrow: 1 }}>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {project.title}
-                                </Typography>
-                                <Typography>
-                                    {project.description}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small"
-                                        onClick={handleOpen}
-                                        >
-                                            Learn More
-                                </Button>
-                            </CardActions>
-                            </Card>
-                            <Modal
-                                aria-labelledby="transition-modal-title"
-                                aria-describedby="transition-modal-description"
-                                open={open}
-                                onClose={handleClose}
-                                closeAfterTransition
-                                BackdropComponent={Backdrop}
-                                BackdropProps={{
-                                timeout: 500,
-                            }}
-                            >
-                                <Fade in={open}>
-                                    <Box sx={style}>
-                                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                                            {project.title}
-                                        </Typography>
-                                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                                            {project.description}
-                                        </Typography>
-                                        <Stack spacing={2} direction="row" justifyContent="right" mt="10px">
-                                            <Button disabled={project.linkDisabled}       variant="outlined">{<OpenInBrowserIcon />}</Button>
-                                            <Button disabled={project.sourceDisabled}
-                                            variant="outlined">{<Code />}</Button>
-                                        </Stack>
-                                    </Box>
-                                </Fade>
-                            </Modal>
+                            {cards(project)}
                         </Grid>
                     ))}
                 </Grid>
