@@ -7,7 +7,9 @@ const Redirect = (target: TargetProps) => {
     }, [target])
 
     return (
-        <h3>Redirecting...</h3>
+        <>
+            Redirecting...
+        </>
     )
 }
 

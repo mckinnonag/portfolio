@@ -20,7 +20,7 @@ const Contact = () => {
                  onClick={() => {
                     navigate('/linkedin');
                  }}>
-                <LinkedInIcon sx={{mr: 1 }}/>
+                <LinkedInIcon />
                 LinkedIn
             </Fab>
             <Fab variant="extended" 

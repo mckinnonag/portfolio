@@ -1,23 +1,39 @@
 import * as React from 'react';
 import { createTheme, ThemeOptions, ThemeProvider, styled } from '@mui/material/styles';
+import { PaletteMode } from '@mui/material';
 
-const Theme = createTheme({
+// defines darkmode or lightmode as the default
+const m: PaletteMode = 'light';
+
+const getDesignTokens = (mode: PaletteMode) => ({
     palette: {
-      primary: {
-        main: '#455a64',
-        light: '#718792',
-        dark: '#1c313a',
+        mode,
+        ...(mode === 'light'
+          ? {
+              // palette values for light mode
+              primary: {
+                main: '#455a64',
+              },
+              secondary: {
+                main: '#80cbc4',
+              },
+              background: {
+                default: '#fafafa',
+                paper: '#ffffff',
+              },
+            }
+          : {
+              // palette values for dark mode
+              primary: {
+                main: '#cfd8dc',
+              },
+              secondary: {
+                main: '#ffab91',
+              },
+            }),
       },
-      secondary: {
-        main: '#f50057',
-        light: '#F73378',
-        dark: '#AB003C',
-      },
-      background: {
-        default: '#fafafa',
-        paper: '#ffffff',
-      },
-    },
-  });
+    });
+
+const Theme = createTheme(getDesignTokens(m));
 
 export default Theme;

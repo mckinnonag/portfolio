@@ -13,20 +13,15 @@ function Layout (props: any) {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <GlobalStyles styles={{ }}/>
-        <Box sx={{
-            height: '100vh',
-            width: '100vw',
+          <Nav/>
+          <Box sx={{
+              maxWidth: '1000px',
+              mx: 'auto',
           }}>
-            <Nav/>
-            <Box sx={{
-                maxWidth: '1000px',
-                mx: 'auto',
-            }}>
-                <Box sx={{ mt: '50px' }}>
-                    {props.children}
-                </Box>
-            </Box>
-        </Box>
+              <Box sx={{ mt: '50px' }}>
+                  {props.children}
+              </Box>
+          </Box>
       </ThemeProvider>
     );
   }

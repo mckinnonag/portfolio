@@ -7,11 +7,11 @@ function About() {
         <>
             <Typography variant="h2">
                 About me
-            </Typography>;
+            </Typography>
             <Divider />
             <Typography>
                 Body
-            </Typography>;
+            </Typography>
         </>
     )
 }
