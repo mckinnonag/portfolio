@@ -6,7 +6,7 @@ import Redirect from './components/Redirect/Redirect';
 import TargetProps from './components/Redirect/target';
 import logo from './logo.svg';
 import './App.css';
-import Projects from './components/Cards/Projects';
+import Projects from './components/Projects/Projects';
 import Layout from './components/Layout/Layout';
 import About from './components/About/About';
 
@@ -25,11 +25,7 @@ function App() {
     <BrowserRouter>
       <Layout>
           <Routes>
-            <Route path="/" element={
-              <>
-                <img src={logo} className="App-logo" alt="logo" />
-              </>
-              } />
+            <Route path="/" element={<About />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />

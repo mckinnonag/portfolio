@@ -9,6 +9,7 @@ const langsMoneyApp: string[] = ['React', 'TypeScript', 'Go', 'Postgres SQL'];
 const langsAnother: string[] = ['Python'];
 const projects: Project[] = [
     {
+        id: 1,
         title: 'This Website',
         description: 'A simple portfolio page built in TypeScript React.',
         languages: langsPortfolio,
@@ -17,6 +18,7 @@ const projects: Project[] = [
         sourceDisabled: false,
     },
     {
+        id: 2,
         title: 'MoneyApp',
         description: 'A expense-sharing application built with a TypeScript React frontend, a Go backend using Gin, Postgres SQL, and utilizing the Plaid API.',
         languages: langsMoneyApp,
@@ -25,6 +27,7 @@ const projects: Project[] = [
         sourceDisabled: false,
     },
     {
+        id: 3,
         title: 'Raft',
         description: 'TBD',
         languages: langsAnother,
@@ -36,7 +39,8 @@ const projects: Project[] = [
 
 const cards = projects.map((project) =>
     <Grid item xs={12} sm={6}>
-        <ProjectCard 
+        <ProjectCard
+            id={project.id}
             title={project.title} 
             description={project.description} 
             languages={project.languages} 
