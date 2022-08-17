@@ -8,6 +8,7 @@ import logo from './logo.svg';
 import './App.css';
 import Projects from './components/Cards/Projects';
 import Layout from './components/Layout/Layout';
+import About from './components/About/About';
 
 const gitTarget: TargetProps = {
   target: 'https://www.github.com/mckinnonag',
@@ -24,13 +25,14 @@ function App() {
     <BrowserRouter>
       <Layout>
           <Routes>
-            <Route path="/portfolio" element={
+            <Route path="/" element={
               <>
                 <img src={logo} className="App-logo" alt="logo" />
               </>
               } />
             <Route path='/projects' element={<Projects />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/about' element={<About />} />
             <Route path='/resume' element={<DocIframe />} />
             <Route path='/github' element={<Redirect target={gitTarget.target} />} />
             <Route path='/linkedin' element={<Redirect target={linkedInTarget.target} />} />

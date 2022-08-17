@@ -12,10 +12,7 @@ function Layout (props: any) {
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <GlobalStyles
-          styles={{
-          }}
-        />
+        <GlobalStyles styles={{ }}/>
         <Box sx={{
             height: '100vh',
             width: '100vw',
@@ -25,7 +22,6 @@ function Layout (props: any) {
                 maxWidth: '1000px',
                 mx: 'auto',
             }}>
-                <Header />
                 <Box sx={{ mt: '50px' }}>
                     {props.children}
                 </Box>

@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { useLocation } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 
-function Header() {
+function About() {
     return (
         <>
             <Typography variant="h2">
-                Header
+                About me
             </Typography>;
             <Divider />
+            <Typography>
+                Body
+            </Typography>;
         </>
     )
 }
 
-export default Header;
+export default About;
