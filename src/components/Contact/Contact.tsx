@@ -1,17 +1,14 @@
-import React, {MouseEvent} from 'react';
-import { Navigate, useNavigate } from 'react-router-dom'
-import Box from '@mui/material/Box';
+import React from 'react';
 import Fab from '@mui/material/Fab';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Link from '@mui/material/Link';
 import "./Contact.css";
 
 const Contact = () => {
-    const navigate = useNavigate();
-
     return (
         <Container maxWidth="sm">
             <Stack
@@ -20,30 +17,38 @@ const Contact = () => {
               spacing={2}
               justifyContent="center"
             >
-                <Fab variant="extended" 
-                    aria-label="linkedin"
-                    onClick={() => {
-                        navigate('/linkedin');
-                    }}>
-                    <LinkedInIcon />
-                    LinkedIn
-                </Fab>
-                <Fab variant="extended" 
-                    aria-label="github"
-                    onClick={() => {
-                        navigate('/github');
-                    }}>
-                    <GitHubIcon sx={{mr: 1 }}/>
-                    GitHub
-                </Fab>
-                <Fab variant="extended" 
-                    aria-label="email"
-                    onClick={() => {
-                        navigate('/mail');
-                    }}>
-                    <MailOutlineIcon sx={{mr: 1 }}/>
-                    Email
-                </Fab>
+                <Link 
+                    href='https://www.linkedin.com/in/mckinnonag/'
+                    underline="none"
+                >
+                    <Fab variant="extended" 
+                        aria-label="linkedin">
+                        <LinkedInIcon />
+                        LinkedIn
+                    </Fab>
+                </Link>
+                <Link 
+                    href='https://www.github.com/mckinnonag'
+                    underline="none"
+                >
+                    <Fab variant="extended" 
+                        aria-label="github"
+                    >
+                        <GitHubIcon sx={{mr: 1 }}/>
+                        GitHub
+                    </Fab>
+                </Link>
+                <Link 
+                    href='mailto:mckinnonag@gmail.com'
+                    underline="none"
+                >
+                    <Fab variant="extended" 
+                        aria-label="email"
+                    >
+                        <MailOutlineIcon sx={{mr: 1 }}/>
+                        Email
+                    </Fab>
+                </Link>
             </Stack>
         </Container>
     );
