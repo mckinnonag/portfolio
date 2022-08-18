@@ -6,7 +6,44 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Link from '@mui/material/Link';
-import "./Contact.css";
+import ContactProps from './ContactInterfaces';
+
+// Array of contact links to render
+const contactList: ContactProps[] = [
+    {
+        id: 1,
+        href: 'https://www.linkedin.com/in/mckinnonag/',
+        label: 'LinkedIn',
+        icon: <LinkedInIcon sx={{mr: 1 }}/>,
+    },
+    {
+        id: 2,
+        href: 'https://www.github.com/mckinnonag',
+        label: 'GitHub',
+        icon: <GitHubIcon sx={{mr: 1 }}/>
+    },
+    {
+        id: 3,
+        href: 'mailto:mckinnonag@gmail.com',
+        label: 'Email',
+        icon: <MailOutlineIcon sx={{mr: 1 }}/>,
+    }
+]
+
+// Renders each ContactProp in a FAB element
+const renderIcons = ((props: ContactProps) => 
+    <Link 
+        href={props.href}
+        underline="none"
+        target="_blank"
+    >
+        <Fab variant="extended" 
+            aria-label="linkedin">
+            {props.icon}
+            {props.label}
+        </Fab>
+    </Link>
+);
 
 const Contact = () => {
     return (
@@ -17,41 +54,9 @@ const Contact = () => {
               spacing={2}
               justifyContent="center"
             >
-                <Link 
-                    href='https://www.linkedin.com/in/mckinnonag/'
-                    underline="none"
-                    target="_blank"
-                >
-                    <Fab variant="extended" 
-                        aria-label="linkedin">
-                        <LinkedInIcon />
-                        LinkedIn
-                    </Fab>
-                </Link>
-                <Link 
-                    href='https://www.github.com/mckinnonag'
-                    underline="none"
-                    target="_blank"
-                >
-                    <Fab variant="extended" 
-                        aria-label="github"
-                    >
-                        <GitHubIcon sx={{mr: 1 }}/>
-                        GitHub
-                    </Fab>
-                </Link>
-                <Link 
-                    href='mailto:mckinnonag@gmail.com'
-                    underline="none"
-                    target="_blank"
-                >
-                    <Fab variant="extended" 
-                        aria-label="email"
-                    >
-                        <MailOutlineIcon sx={{mr: 1 }}/>
-                        Email
-                    </Fab>
-                </Link>
+                {contactList.map((icon) => (
+                    renderIcons(icon)
+                ))}
             </Stack>
         </Container>
     );

@@ -28,7 +28,7 @@ const style = {
   };
 
 const ProjectCard = (project: Project) => {
-    // State for the modal
+    // Modal state
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -90,8 +90,7 @@ const ProjectCard = (project: Project) => {
                                 underline="none"
                                 target="_blank"
                             >
-                                <Button disabled={project.sourceDisabled}
-                                        variant="outlined">{<Code />}</Button>
+                                <Button disabled={project.sourceDisabled}variant="outlined">{<Code />}</Button>
                             </Link>
                         </Stack>
                     </Box>
