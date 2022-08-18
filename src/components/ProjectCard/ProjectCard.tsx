@@ -78,20 +78,28 @@ const ProjectCard = (project: Project) => {
                             {project.longDescription}
                         </Typography>
                         <Stack spacing={2} direction="row" justifyContent="right" mt="10px">
-                            <Link 
+                            {!project.linkDisabled &&
+                                <Link 
                                 href={project.linkURL}
                                 underline="none"
                                 target="_blank"
-                            >
-                                <Button disabled={project.linkDisabled}       variant="outlined">{<OpenInBrowserIcon />}</Button>
-                            </Link>
-                            <Link 
-                                href={project.sourceURL}
-                                underline="none"
-                                target="_blank"
-                            >
-                                <Button disabled={project.sourceDisabled}variant="outlined">{<Code />}</Button>
-                            </Link>
+                                >
+                                    <Button variant="outlined">
+                                        <OpenInBrowserIcon />
+                                    </Button>
+                                </Link>
+                            }
+                            {!project.sourceDisabled &&
+                                <Link 
+                                    href={project.sourceURL}
+                                    underline="none"
+                                    target="_blank"
+                                >
+                                    <Button variant="outlined">
+                                        <Code />
+                                    </Button>
+                                </Link>
+                            }
                         </Stack>
                     </Box>
                 </Fade>

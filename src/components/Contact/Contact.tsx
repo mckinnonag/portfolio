@@ -32,7 +32,7 @@ const contactList: ContactProps[] = [
 
 // Renders each ContactProp in a FAB element
 const renderIcons = ((props: ContactProps) => 
-    <Link 
+    <Link key={props.id}
         href={props.href}
         underline="none"
         target="_blank"
