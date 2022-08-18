@@ -1,20 +1,8 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Box from '@mui/material/Box';
-import Backdrop from '@mui/material/Backdrop';
-import Code from '@mui/icons-material/Code';
-import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
-import Project from '../Cards/Interfaces';
+import Project from './Interfaces';
 import ProjectCard from '../ProjectCard/ProjectCard';
 
 
@@ -26,29 +14,35 @@ const langsAnother: string[] = ['Python'];
 const projects: Project[] = [
     {
         id: 1,
-        title: 'This Website',
-        description: 'A simple portfolio page built in TypeScript React.',
+        title: 'Portfolio',
+        description: 'View the source code for this website.',
+        longDescription: 'A simple single page app built in TypeScript React. Check out the source code below.',
         languages: langsPortfolio,
-        linkURL: 'google.com',
+        linkURL: '',
         linkDisabled: true,
+        sourceURL: 'https://github.com/mckinnonag/portfolio',
         sourceDisabled: false,
     },
     {
         id: 2,
         title: 'MoneyApp',
-        description: 'A expense-sharing application built with a TypeScript React frontend, a Go backend using Gin, Postgres SQL, and utilizing the Plaid API.',
+        description: 'An expense-sharing application built with a TypeScript React frontend, a Go backend using Gin, Postgres SQL, and the Plaid API.',
+        longDescription: 'This is still a work in progress, but you can check out the source code below!',
         languages: langsMoneyApp,
-        linkURL: 'google.com',
-        linkDisabled: false,
+        linkURL: '',
+        linkDisabled: true,
+        sourceURL: 'https://github.com/mckinnonag/moneyapp',
         sourceDisabled: false,
     },
     {
         id: 3,
         title: 'Raft',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        longDescription: '',
         languages: langsAnother,
         linkURL: 'google.com',
         linkDisabled: false,
+        sourceURL: '',
         sourceDisabled: true,
     },
 ]
@@ -58,19 +52,16 @@ const cards = ((project: Project) =>
         id={project.id}
         title={project.title} 
         description={project.description} 
+        longDescription={project.longDescription}
         languages={project.languages} 
         linkURL={project.linkURL}
         linkDisabled={project.linkDisabled}
+        sourceURL={project.sourceURL}
         sourceDisabled={project.sourceDisabled}
     />
 );
 
 export default function Projects() {
-    // State for the modal
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-
     return (
         <>
             {/* Hero unit */}

@@ -20,6 +20,7 @@ const Contact = () => {
                 <Link 
                     href='https://www.linkedin.com/in/mckinnonag/'
                     underline="none"
+                    target="_blank"
                 >
                     <Fab variant="extended" 
                         aria-label="linkedin">
@@ -30,6 +31,7 @@ const Contact = () => {
                 <Link 
                     href='https://www.github.com/mckinnonag'
                     underline="none"
+                    target="_blank"
                 >
                     <Fab variant="extended" 
                         aria-label="github"
@@ -41,6 +43,7 @@ const Contact = () => {
                 <Link 
                     href='mailto:mckinnonag@gmail.com'
                     underline="none"
+                    target="_blank"
                 >
                     <Fab variant="extended" 
                         aria-label="email"

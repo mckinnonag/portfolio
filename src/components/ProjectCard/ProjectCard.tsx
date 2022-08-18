@@ -4,17 +4,16 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Box from '@mui/material/Box';
 import Backdrop from '@mui/material/Backdrop';
 import Code from '@mui/icons-material/Code';
+import Link from '@mui/material/Link';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
-import Project from '../Cards/Interfaces';
+import Project from '../Projects/Interfaces';
 
 // Modal style
 const style = {
@@ -76,12 +75,24 @@ const ProjectCard = (project: Project) => {
                             {project.title}
                         </Typography>
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                            {project.description}
+                            {project.longDescription}
                         </Typography>
                         <Stack spacing={2} direction="row" justifyContent="right" mt="10px">
-                            <Button disabled={project.linkDisabled}       variant="outlined">{<OpenInBrowserIcon />}</Button>
-                            <Button disabled={project.sourceDisabled}
-                            variant="outlined">{<Code />}</Button>
+                            <Link 
+                                href={project.linkURL}
+                                underline="none"
+                                target="_blank"
+                            >
+                                <Button disabled={project.linkDisabled}       variant="outlined">{<OpenInBrowserIcon />}</Button>
+                            </Link>
+                            <Link 
+                                href={project.sourceURL}
+                                underline="none"
+                                target="_blank"
+                            >
+                                <Button disabled={project.sourceDisabled}
+                                        variant="outlined">{<Code />}</Button>
+                            </Link>
                         </Stack>
                     </Box>
                 </Fade>
