@@ -87,15 +87,6 @@ export default function Projects() {
                 <Typography variant="h5" align="center" color="text.secondary" paragraph>
                     A collection of personal projects that I've been working on.
                 </Typography>
-                <Stack
-                    sx={{ pt: 4 }}
-                    direction="row"
-                    spacing={2}
-                    justifyContent="center"
-                >
-                    <Button variant="contained">Main call to action</Button>
-                    <Button variant="outlined">Secondary action</Button>
-                </Stack>
             </Container>
             {/* End hero unit */}
             <Container sx={{ py: 8 }} maxWidth="md">
