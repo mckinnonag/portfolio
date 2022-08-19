@@ -15,7 +15,9 @@ function About() {
               About me
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Originally from Massachusetts and now in Brooklyn, New York, I graduated from UMass Amherst with a degree in Journalism and Anthropology. 
+                
+                After working in IT for most of my career, I became interested in computer science, and especially distributed systems, and started taking courses via MIT OpenCourseWare and similar resources a few years ago. 
             </Typography>
         </Container>
     )

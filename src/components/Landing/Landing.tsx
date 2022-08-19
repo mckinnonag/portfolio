@@ -9,7 +9,7 @@ const featuredLinks = [
       title: 'About me',
       date: 'Nov 12',
       description:
-        'This is a wider card with supporting text below as a natural lead-in to additional content.',
+        'I\'m a self-taught developer with an interest in distributed systems and web-scale technology.',
       image: 'https://source.unsplash.com/random',
       imageLabel: 'Image Text',
       href: '/about'
@@ -18,7 +18,7 @@ const featuredLinks = [
       title: 'Contact',
       date: 'Nov 11',
       description:
-        'Reach me on LinkedIn, email, or check out my GitHub.',
+        'Reach me on LinkedIn or email, or check out my GitHub.',
       image: 'https://source.unsplash.com/random',
       imageLabel: 'Image Text',
       href: '/contact',
