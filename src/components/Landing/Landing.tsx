@@ -4,6 +4,18 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import FeaturedLink from '../FeaturedLink/FeaturedLink';
 
+// This static content will render in the MainCard component
+const mainProps = {
+  title: 'Hi, I\'m Alex 👋🏻',
+  description:
+  "I'm a software developer based in Brooklyn, New York, specializing in Python, JavaScript, and Go.",
+  image: 'https://source.unsplash.com/r4PbOL-LUbs',
+  imageText: 'NYC',
+  linkText: 'Check out what I\'ve been working on…',
+  href: '/projects',
+}
+
+// This static content will render in a repeating FeaturedLink component
 const featuredLinks = [
   {
     title: 'About me',
@@ -24,16 +36,6 @@ const featuredLinks = [
     href: '/contact',
   },
 ];
-
-const mainProps = {
-      title: 'Hi, I\'m Alex 👋🏻',
-      description:
-      "I'm a software developer based in Brooklyn, New York, specializing in Python, JavaScript, and Go.",
-      image: 'https://source.unsplash.com/r4PbOL-LUbs',
-      imageText: 'NYC',
-      linkText: 'Check out what I\'ve been working on…',
-      href: '/projects',
-}
   
 export default function Landing() {
     return (
