@@ -6,20 +6,9 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import MainCardProps from './MainCardInterfaces';
 
-const mainPost: MainCardProps = {
-    post: {
-        title: 'Hi, I\'m Alex 👋',
-        description:
-        "I'm a software developer based in Brooklyn, New York, specializing in Python, JavaScript, and Go.",
-        image: 'https://source.unsplash.com/random',
-        imageText: 'main image description',
-        linkText: 'Check out what I\'ve been working on…',
-        href: '/projects',
-    }
-}
-const { post } = mainPost;
-
-export default function MainCard() {
+export default function MainCard(props: MainCardProps) {
+    const { post } = props;
+    
     return (
         <Paper
             sx={{
@@ -55,13 +44,19 @@ export default function MainCard() {
                     }}
                 >
                     <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    {post.title}
+                        {post.title}
                     </Typography>
                     <Typography variant="h5" color="inherit" paragraph>
-                    {post.description}
+                        {post.description}
                     </Typography>
-                    <Link variant="subtitle1" href={post.href}>
-                        {post.linkText}
+                    <Link 
+                        variant="subtitle1"
+                        underline="none"
+                        href={post.href}
+                    >
+                        <Typography color="secondary">
+                            {post.linkText}
+                        </Typography>
                     </Link>
                 </Box>
                 </Grid>

@@ -3,7 +3,7 @@ interface Project {
     title: string;
     description: string;
     longDescription: string;
-    languages: string[];
+    photoSource: string;
     linkURL: string;
     linkDisabled: boolean;
     sourceURL: string;

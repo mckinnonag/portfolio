@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { createTheme, ThemeOptions, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { PaletteMode } from '@mui/material';
 
 // defines darkmode or lightmode as the default
@@ -15,7 +14,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
                 main: '#455a64',
               },
               secondary: {
-                main: '#80cbc4',
+                main: '#ef5350',
               },
               background: {
                 default: '#fafafa',

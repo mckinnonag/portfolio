@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
+import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Stack from '@mui/material/Stack';
@@ -13,7 +14,7 @@ import Backdrop from '@mui/material/Backdrop';
 import Code from '@mui/icons-material/Code';
 import Link from '@mui/material/Link';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
-import Project from '../Projects/Interfaces';
+import Project from '../Projects/ProjectInterfaces';
 
 // Modal style
 const style = {
@@ -34,30 +35,34 @@ const ProjectCard = (project: Project) => {
     const handleClose = () => setOpen(false);
     return (
         <>
-            <Card
-                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+            <CardActionArea 
+                sx={{ height: '100%' }}
+                onClick={handleOpen}
+            >
+                <Card
+                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
-                <CardMedia
-                    component="img"
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {project.title}
-                    </Typography>
-                    <Typography>
-                        {project.description}
-                    </Typography>
-                </CardContent>
-                <CardActions>
-                    <Button size="small"
-                            onClick={handleOpen}
-                            >
-                                Learn More
-                    </Button>
-                </CardActions>
-            </Card>
+                    <CardMedia
+                        component="img"
+                        image={project.photoSource}
+                        alt="random"
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {project.title}
+                        </Typography>
+                        <Typography>
+                            {project.description}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button size="small">
+                            Learn More
+                        </Button>
+                    </CardActions>
+                </Card>
+            </CardActionArea>
+
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"

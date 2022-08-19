@@ -2,22 +2,17 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Project from './Interfaces';
+import Project from './ProjectInterfaces';
 import ProjectCard from '../ProjectCard/ProjectCard';
 
-
-// Static content to serve projects
-const langsPortfolio: string[] = ['React', 'TypeScript'];
-const langsMoneyApp: string[] = ['React', 'TypeScript', 'Go', 'Postgres SQL'];
-const langsAnother: string[] = ['Python'];
-
+// Static content to serve project cards
 const projects: Project[] = [
     {
         id: 1,
         title: 'Portfolio',
         description: 'View the source code for this website.',
         longDescription: 'A single page portfolio app built in TypeScript React. Check out the source code below.',
-        languages: langsPortfolio,
+        photoSource: 'https://source.unsplash.com/xkBaqlcqeb4',
         linkURL: '',
         linkDisabled: true,
         sourceURL: 'https://github.com/mckinnonag/portfolio',
@@ -28,7 +23,7 @@ const projects: Project[] = [
         title: 'MoneyApp',
         description: 'An expense-sharing application built with a TypeScript React frontend, a Go backend using Gin, Postgres SQL, and the Plaid API.',
         longDescription: 'This is still a work in progress, but you can check out the source code!',
-        languages: langsMoneyApp,
+        photoSource: 'https://source.unsplash.com/ZVprbBmT8QA',
         linkURL: '',
         linkDisabled: true,
         sourceURL: 'https://github.com/mckinnonag/moneyapp',
@@ -38,8 +33,8 @@ const projects: Project[] = [
         id: 3,
         title: 'Raft',
         description: 'A sharded key/value store and consensus algorithm, based on Raft, and written in Go.',
-        longDescription: 'Based on the labs from MIT 6.824, Distributed Systems. This application implements leader election, snapshotting, log reply, and other features of linearizable distributed systems. Please reach out to me and I would be happy to share the source code.',
-        languages: langsAnother,
+        longDescription: 'Based on the labs from MIT 6.824, Distributed Systems. This application implements leader election, snapshotting, log replay, and other features of linearizable distributed systems. Please reach out to me and I would be happy to share the source code.',
+        photoSource: 'https://source.unsplash.com/fteR0e2BzKo',
         linkURL: 'google.com',
         linkDisabled: true,
         sourceURL: '',
@@ -53,7 +48,7 @@ const cards = ((project: Project) =>
         title={project.title} 
         description={project.description} 
         longDescription={project.longDescription}
-        languages={project.languages} 
+        photoSource={project.photoSource}
         linkURL={project.linkURL}
         linkDisabled={project.linkDisabled}
         sourceURL={project.sourceURL}
