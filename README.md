@@ -1,6 +1,6 @@
 # Portfolio
 
-This project was built with TypeScript React and MUI material design.
+This project was built with TypeScript React and MUI material design. You can view it [here](https://mckinnonag.github.io/portfolio/).
 
 ## Available Scripts
 
@@ -45,4 +45,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Credits
 
-Most of the components were built using MUI [mui.com](https://mui.com/).
+Most of the components were built using [MUI](https://mui.com/).
