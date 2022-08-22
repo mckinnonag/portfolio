@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link as RouterLink } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -34,8 +34,8 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/portfolio"
+            component={RouterLink}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -91,8 +91,8 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            component={RouterLink}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
