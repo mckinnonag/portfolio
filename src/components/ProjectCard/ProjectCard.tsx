@@ -84,26 +84,24 @@ const ProjectCard = (project: Project) => {
                         </Typography>
                         <Stack spacing={2} direction="row" justifyContent="right" mt="10px">
                             {!project.linkDisabled &&
-                                <Link 
+                                <a 
                                 href={project.linkURL}
-                                underline="none"
                                 target="_blank"
                                 >
                                     <Button variant="outlined">
                                         <OpenInBrowserIcon />
                                     </Button>
-                                </Link>
+                                </a>
                             }
                             {!project.sourceDisabled &&
-                                <Link 
+                                <a 
                                     href={project.sourceURL}
-                                    underline="none"
                                     target="_blank"
                                 >
                                     <Button variant="outlined">
                                         <Code />
                                     </Button>
-                                </Link>
+                                </a>
                             }
                         </Stack>
                     </Box>
