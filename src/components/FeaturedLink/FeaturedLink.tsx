@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
@@ -13,7 +14,7 @@ export default function FeaturedLink(props: FeaturedLinkProps) {
   return (
     <Grid item xs={12} md={6}>
       <CardActionArea 
-        component="a" 
+        component={Link} 
         href={post.href}
         sx={{ height: '100%' }}
       >
