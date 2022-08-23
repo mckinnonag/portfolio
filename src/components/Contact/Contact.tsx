@@ -57,6 +57,7 @@ const Contact = () => {
               direction={{ xs: 'column', sm: 'row' }}
               spacing={{ xs: 1, sm: 2, md: 4 }}
               justifyContent="center"
+              alignItems="center"
             >
                 {contactList.map((icon) => (
                     renderIcons(icon)
