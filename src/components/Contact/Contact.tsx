@@ -54,8 +54,8 @@ const Contact = () => {
         <Container maxWidth="sm">
             <Stack
               sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={{ xs: 1, sm: 2, md: 4 }}
               justifyContent="center"
             >
                 {contactList.map((icon) => (
