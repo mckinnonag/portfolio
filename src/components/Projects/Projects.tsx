@@ -21,7 +21,7 @@ const projects: Project[] = [
     {
         id: 2,
         title: 'MoneyApp',
-        description: 'An expense-sharing application built with a TypeScript React frontend, a Go backend using Gin, Postgres SQL, and the Plaid API.',
+        description: 'An expense-sharing application built with a TypeScript React frontend, a Go backend using Gin, Firebase for auth and user admin, Postgres SQL, and the Plaid API.',
         longDescription: 'This is still a work in progress, but you can check out the source code!',
         photoSource: 'https://source.unsplash.com/ZVprbBmT8QA',
         linkURL: '',
